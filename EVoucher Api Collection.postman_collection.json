@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "abc5e0a1-3d85-4a20-b141-8aa3c7e48e3a",
+		"name": "EVoucher Api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2614604"
+	},
+	"item": [
+		{
+			"name": "Get Api Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/token/login?username=admin&password=admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"token",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Evouchers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/Evouchers/GetEvouchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Evouchers",
+						"GetEvouchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Evoucher Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/Evouchers/GetEvoucherDetail?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Evouchers",
+						"GetEvoucherDetail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Evoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"eVoucherCode\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"title\": \"100$\",\r\n  \"description\": \"100$ Voucher\",\r\n  \"expiredDate\": \"2022-09-11T23:24:42.718Z\",\r\n  \"image\": \"string\",\r\n  \"amount\": 100,\r\n  \"maxBuyLimit\": 5,\r\n  \"giftPerUserLimit\": 3,\r\n  \"isActive\": true,\r\n  \"isDeleted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5181/api/Evouchers/CreateEvoucher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Evouchers",
+						"CreateEvoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Evoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 3,\r\n  \"eVoucherCode\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"title\": \"150$\",\r\n  \"description\": \"100$ Voucher\",\r\n  \"expiredDate\": \"2022-09-11T23:24:42.718Z\",\r\n  \"image\": \"string\",\r\n  \"amount\": 150,\r\n  \"maxBuyLimit\": 5,\r\n  \"giftPerUserLimit\": 3,\r\n  \"isActive\": true,\r\n  \"isDeleted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5181/api/Evouchers/UpdateEvoucher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Evouchers",
+						"UpdateEvoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Purchases",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/Purchase/GetPurchases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Purchase",
+						"GetPurchases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Purchase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"eVoucherId\": 3,\r\n  \"promoCode\": \"\",\r\n  \"qty\": 1,\r\n  \"amount\": 150,\r\n  \"buyType\": 0,\r\n  \"paymentMethod\": 0,\r\n  \"name\": \"Tun Aung\",\r\n  \"phno\": \"0998763264\",\r\n  \"isDeleted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5181/api/Purchase/CreatePurchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Purchase",
+						"CreatePurchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Promocode Valid Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/Purchase/VerifyPromocode?promocode=027254TNLmN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Purchase",
+						"VerifyPromocode"
+					],
+					"query": [
+						{
+							"key": "promocode",
+							"value": "027254TNLmN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Promocode Invalid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY2MjkzODQ3MiwiZXhwIjoxNjYzMDI0ODcyLCJpYXQiOjE2NjI5Mzg0NzJ9.l8kCJx_TfQL1ZxcRkCpq7M2gJr0nx02Z4BbozBfj5xbNy7U4NOf_99mqsqA6EVkkW7R7lHXr9zapE73QncWbhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5181/api/Purchase/VerifyPromocode?promocode=027254TNLm23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5181",
+					"path": [
+						"api",
+						"Purchase",
+						"VerifyPromocode"
+					],
+					"query": [
+						{
+							"key": "promocode",
+							"value": "027254TNLm23"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
